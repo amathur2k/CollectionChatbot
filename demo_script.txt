@@ -1,0 +1,44 @@
+Step 1:
+Caller response: 'Good morning/Afternoon/Evening Sir/Miss/Mdm. My name is <Name of the caller> calling from <bank name> and I would like to speak with <Debtor's Full Name>.'
+
+If Debtor response: 'Yes Speaking' 
+    #Proceed to Step 2#
+If: Debtor response : 'No, wrong number'
+    #Proceed to {script_1}#
+If: Debtor response : 'I cannot talk right now or I am in the meeting or can you call me back' 
+    #Proceed to {script_3}#
+
+Step 2:
+Caller response: 'To ensure I am speaking with the correct person, may I confirm your last 4 digits of your IC number or Date of Birth please?'
+If: Debtor response: Reads out 'Last 4 digits IC number or Date of birth'
+    Then: Caller response: 'Thank you for the verification this call may be recorded for quality and compliances purposes.' 
+    #Proceed to Step 3#
+
+Else-if: Debtor response (Any of below):
+	'Why must I read my ic numbers or I cannot read my ic numbers you can check in your system'
+        #Proceed to {script_3}
+	'You are a scammer or bank is Scammer'
+        #Proceed to {script_4}
+	'I have fully settled the account long time ago'
+        #Proceed to {script_5}
+	'I have do not have any account with your bank'
+        #Proceed to {script_6}
+	'This is a fraud case I have notified your bank'
+        #Proceed to {script_7}
+	'Keep receiving many calls will lodge a police report'
+        #Proceed to {script_8}
+	'Keep harassing by calls will lodge a report to central bank  
+        #Proceed {script_9}
+	'This account is Time barred I do not have to pay'
+        #Proceed to {script_10}
+	'I will not pay' 
+        #Proceed to  {script_11}'
+	'I cannot afford to pay'
+        #Proceed to {script_13}
+	'I am jobless not working'
+        #Proceed to {script_13}
+	'I am Sick I cannot pay'
+        #Proceed to {script_14}
+
+After this each script has many conditional statement too. Till call is closed in agreement or disagreement
+ 
