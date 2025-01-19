@@ -15,7 +15,7 @@ _set_env("ANTHROPIC_API_KEY")
 _set_env("OPENAI_API_KEY")
 # Normally TAVILY_API_KEY could be prompted, but the user said "no new tools",
 # so we won't rely on Tavily for anything else here:
-os.environ["TAVILY_API_KEY"] = "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"
+os.environ["TAVILY_API_KEY"] = ""
 
 class State(TypedDict):
     messages: Annotated[list[AnyMessage], add_messages]

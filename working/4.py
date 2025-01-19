@@ -11,7 +11,7 @@ def _set_env(var: str):
 _set_env("ANTHROPIC_API_KEY")
 _set_env("OPENAI_API_KEY")
 #_set_env("TAVILY_API_KEY")
-os.environ["TAVILY_API_KEY"] = "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"
+os.environ["TAVILY_API_KEY"] = ""
 
 
 from typing import Annotated
